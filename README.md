@@ -110,7 +110,7 @@ Alerts varied between High Cardinality, High correlation, Missing, Uniform, Zero
 ***
 #### Core:
 * 311_data.sql query and fixing
-```
+```sql
 with all_data as (
   select 
     unique_key,
@@ -211,7 +211,7 @@ AND latitude IS NOT NULL
 AND longitude IS NOT NULL
 ```
 * Collisions_data.sql query
-```
+```sql
 with corrected as (
   select
     crash_date,
@@ -296,7 +296,7 @@ WHERE crash_date BETWEEN '2019-07-01' AND '2022-11-28'
 #### Staging:
 #### **311 Models:**
 * 311_location.sql
-```
+```sql
 with location_dim as (
   select distinct
     location_type,
@@ -325,7 +325,7 @@ from
 ```
 
 * agency_type.sql
-```
+```sql
 with agency_dim as (
   select distinct
     agency,
@@ -342,7 +342,7 @@ from
 ```
 
 * channel_type.sql
-```
+```sql
 with channel_dim as (
   select distinct
     open_data_channel_type as open_data_channel_type
@@ -357,7 +357,7 @@ from
 ```
 
 * complaint_type.sql
-```
+```sql
 with complaint as (
     select distinct
         complaint_type,
@@ -372,7 +372,7 @@ from complaint
 ```
 
 * status.sql
-```
+```sql
 with status_dimension as (
   select distinct
     status as status
@@ -389,7 +389,7 @@ from
 ***
 #### **Collision Models:**
 * collision.sql
-```
+```sql
 with collision_dim as (
   select distinct
     vehicle_type_code_1,
@@ -424,7 +424,7 @@ from
 ```
 
 * factors.sql
-```
+```sql
 with factors_dim as (
   select distinct
     CONTRIBUTING_FACTOR_VEHICLE_1,
@@ -440,7 +440,7 @@ from
 ```
 
 * fatalities.sql
-```
+```sql
 with fatal_dim as (
   select distinct
     number_of_persons_killed,
@@ -458,7 +458,7 @@ from
 ```
 
 * injuries.sql
-```
+```sql
 with injur_dim as (
   select distinct
     number_of_persons_injured,
@@ -478,7 +478,7 @@ from
 ***
 #### **Shared Models:**
 * date_dimenstion.sql (day as the lowest grain using "generate_date_Array")
-```
+```sql
 SELECT
   row_number() over () as date_dim_id,
   d as full_date,
@@ -493,7 +493,7 @@ FROM (
 ```
 
 * time_dimension.sql (second as the lowest grain using "generate_timestamp_array")
-```
+```sql
 SELECT
   row_number() over () as time_dim_id,
   format_timestamp("%H:%M:%S", t) as full_time,
@@ -508,7 +508,7 @@ FROM (
 ```
 
 * location_dimension.sql (generated from the two staging locations made earlier)
-```
+```sql
 with complaint_location as (
     select *
     from {{ref ("311_location")}}
@@ -543,7 +543,7 @@ from
 ***
 #### **core (fact tables):**
 * fct_311.sql with screenshot of preview.
-```
+```sql
 {{ config(
     materialized='table'
 )}}
@@ -621,7 +621,7 @@ from fact_table
 
 
 * fct_collisions.sql with screenshot of preview
-```
+```sql
 {{ config(
     materialized='table'
 )}}
