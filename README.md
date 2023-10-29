@@ -755,15 +755,16 @@ The BI and Data Visualization tool was used to create a dashboard application co
 ***
 * Number of Injuries:
 > This visualization was created using columns from the injuries dimension and the “full date” column in the date dimension. The type of injured personnel was used as a color filter.
-![image](https://github.com/MoeMegahed/ETL-Process-for-Data-Warehousing-DBT-and-BigQuery/assets/91993986/3f5fe28b-7fda-45e3-a47c-df851d67204d)
+![image](https://github.com/MoeMegahed/ETL-Process-for-Data-Warehousing-DBT-and-BigQuery/assets/91993986/83c66a39-eabc-4835-bed2-672ddb0b7b7f)
 
 * Number of Fatalities:
 > This visualization was created using columns from the fatalities dimension and the “full date” column in the date dimension. The type of personnel involved was used as a color filter.
-![image](https://github.com/MoeMegahed/ETL-Process-for-Data-Warehousing-DBT-and-BigQuery/assets/91993986/2c26d067-7bb7-4af6-b5f3-a7a6b3d1e555)
+![image](https://github.com/MoeMegahed/ETL-Process-for-Data-Warehousing-DBT-and-BigQuery/assets/91993986/252b0aa4-77b6-4104-831c-7024c6b9d348)
 
 * Number of Collisions Per Zip code
-> This was a direct visualization that we created using the zip code and the collision id column from the fact table. The collision Id had to be changed to a measure and used “count” the aggregate. Also, Borough was used as a color filter
-![image](https://github.com/MoeMegahed/ETL-Process-for-Data-Warehousing-DBT-and-BigQuery/assets/91993986/ecfa6c16-e49f-4983-8558-85f3fbfc1cc7)
+> This was a direct visualization that we created using the zip code and the collision id column from the fact table. The collision Id had to be changed to a measure and used “count” the aggregate.
+![image](https://github.com/MoeMegahed/ETL-Process-for-Data-Warehousing-DBT-and-BigQuery/assets/91993986/08c49581-f5cb-4184-a605-05418eec0441)
+
 
 * Zip Code Map:
 > This visualization was created using the longitude and latitude as measures, zip code as the details, and borough as a color filter. 
@@ -772,8 +773,8 @@ The BI and Data Visualization tool was used to create a dashboard application co
 
 * Dashboard:
 > The dashboard consists of the four sheets above and uses the “zip code map” sheet as a filter. The “search zip code” parameter was also added to the dashboard
-![image](https://github.com/MoeMegahed/ETL-Process-for-Data-Warehousing-DBT-and-BigQuery/assets/91993986/207198c2-8563-43d0-b9fe-3df6441248fc)
-> __[Link to the Dashboard on Tableau Public](https://public.tableau.com/app/profile/muhammad.megahed/viz/BIApplicationforCollisions311Data-Team10/Dashboard1?publish=yes)__
+![image](https://github.com/MoeMegahed/ETL-Process-for-Data-Warehousing-DBT-and-BigQuery/assets/91993986/6bf46823-591e-4eb9-8aac-5950585c79a7)
+> __[Link to the Dashboard on Tableau Public](https://public.tableau.com/views/BIApplicationforCollisions311Data-Team10/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)__
 
 
 
